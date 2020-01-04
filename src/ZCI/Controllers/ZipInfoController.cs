@@ -19,7 +19,7 @@ namespace ZCI.Controllers
             _zipInfoService = zipInfoService;
         }
 
-        [Route("api/zipinfo"), HttpGet]
+        [Route("api/zipinfo/{zipCode}"), HttpGet]
         public async Task<ZipCodeInfoDTO> Get(string zipCode)
         {
             return await _zipInfoService.GetZipCodeInfoAsync(zipCode);
