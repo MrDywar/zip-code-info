@@ -147,7 +147,7 @@ namespace ZCI.Domain.Test
         {
             var result = new PolicyRegistry
             {
-                { "defaultExternalApiPolicy", Policy.NoOpAsync().WrapAsync(Policy.NoOpAsync<HttpResponseMessage>()) }
+                { "zipCodeInfoExtApiPolicy", Policy.NoOpAsync().WrapAsync(Policy.NoOpAsync<HttpResponseMessage>()) }
             };
 
             return result;

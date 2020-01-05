@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ZCI.Infrastructure.Policies
 {
-    public class DefaultExternalApiPolicy
+    public class ZipCodeInfoExtApiPolicy
     {
         public static AsyncPolicyWrap<HttpResponseMessage> Create(IConfiguration configuration)
         {
@@ -24,7 +24,7 @@ namespace ZCI.Infrastructure.Policies
                 );
 
             var circuitBreaker = Policy<HttpResponseMessage>
-                .Handle<Exception>()
+                .Handle<Exception>() //TODO: ignore user input errors, or catch well known external server errors (403,500...).
                 .CircuitBreakerAsync(
                     exceptionsCountToBreak,
                     TimeSpan.FromSeconds(breakDuration)

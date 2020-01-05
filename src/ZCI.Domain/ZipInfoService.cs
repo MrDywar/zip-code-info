@@ -40,7 +40,7 @@ namespace ZCI.Domain
             _clientFactory = clientFactory;
             _logger = logger;
 
-            _externalApiPolicy = registry.Get<AsyncPolicyWrap<HttpResponseMessage>>("defaultExternalApiPolicy");
+            _externalApiPolicy = registry.Get<AsyncPolicyWrap<HttpResponseMessage>>("zipCodeInfoExtApiPolicy");
         }
 
         public async Task<ZipCodeInfoDTO> GetZipCodeInfoAsync(string zipCode)

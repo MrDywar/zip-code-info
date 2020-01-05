@@ -15,7 +15,7 @@ namespace ZCI.Infrastructure.Policies
         {
             return new PolicyRegistry()
             {
-                { "defaultExternalApiPolicy", DefaultExternalApiPolicy.Create(configuration) }
+                { "zipCodeInfoExtApiPolicy", ZipCodeInfoExtApiPolicy.Create(configuration) }
             };
         }
     }
