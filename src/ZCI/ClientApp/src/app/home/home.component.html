@@ -1,21 +1,31 @@
-<h1>Input zip code (usa only) to view some interesting details.</h1>
+<div>
+  <div class="title">
+    Input zip code (usa only) to view some interesting details.
+  </div>
 
-<form [formGroup]="form" novalidate (submit)="search()" #myform="ngForm">
-  <div class="form-group">
-    <input class="form-control" type="text" formControlName="zipCode" />
-    <div
-      class="alert alert-danger"
-      *ngIf="form.controls['zipCode'].invalid && myform.submitted"
-    >
-      Please enter zip code
+  <form
+    [formGroup]="form"
+    novalidate
+    (submit)="search()"
+    #myform="ngForm"
+    class="form"
+  >
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="zipCode" />
+      <div
+        class="alert alert-danger"
+        *ngIf="form.controls['zipCode'].invalid && myform.submitted"
+      >
+        Please enter zip code
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <button type="submit">Search</button>
-  </div>
-</form>
+    <div class="buttons">
+      <button type="submit">Search</button>
+    </div>
+  </form>
 
-<div *ngIf="currentZipInfoDto">
-  <h4>{{ getText(currentZipInfoDto) }}</h4>
+  <div *ngIf="currentZipInfoDto">
+    <div>{{ getText(currentZipInfoDto) }}</div>
+  </div>
 </div>

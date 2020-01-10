@@ -1,0 +1,13 @@
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 300px;
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

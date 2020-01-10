@@ -10,7 +10,8 @@ import {
 
 @Component({
   selector: "app-home",
-  templateUrl: "./home.component.html"
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent {
   public currentZipInfoDto: ZipInfoDto;
@@ -32,7 +33,6 @@ export class HomeComponent {
     this.zipInfoDataService.getZipInfo(zipCode).subscribe(
       result => {
         this.currentZipInfoDto = result;
-        console.log(result);
       },
       error => {
         console.log(error);
